@@ -3,3 +3,4 @@ defaultLocation: US
 defaultDataset: bqd_cicd
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.0
+datasetSuffix: ${BRANCH_NAME}
