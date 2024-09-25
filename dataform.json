@@ -1,0 +1,8 @@
+{
+  "defaultSchema": "bqd_cicd",
+  "defaultLocation": "US",
+  "assertionSchema": "dataform_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "sam-pitcher-playground",
+  "schemaSuffix": ""
+}
