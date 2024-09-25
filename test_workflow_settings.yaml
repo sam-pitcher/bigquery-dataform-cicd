@@ -1,5 +1,5 @@
 defaultProject: sam-pitcher-playground
 defaultLocation: US
-defaultDataset: bqd_cicd
+defaultDataset: bqd_cicd_test
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.0
