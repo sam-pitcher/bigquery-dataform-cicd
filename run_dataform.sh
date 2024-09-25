@@ -7,4 +7,4 @@ echo "{\"projectId\": \"${PROJECT_ID}\", \"location\": \"${LOCATION}\"}" > .df-c
 
 
 npm i -g @dataform/cli@^3.0.0-beta
-dataform run 
+dataform run --vars=datasetSuffix=${BRANCH_NAME}
