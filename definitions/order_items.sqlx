@@ -1,0 +1,11 @@
+config {
+  type: "table",
+  name: "order_items",
+  bigquery: {
+    partitionBy: "DATE(created_at)"   // Partition by date column
+  }
+}
+
+SELECT
+*
+FROM `sam-pitcher-playground.bqd_cicd_raw.order_items_raw`
