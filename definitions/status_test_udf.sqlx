@@ -1,0 +1,24 @@
+config { 
+  hasOutput: true,
+  tags: ["udf"]
+}
+
+CREATE OR REPLACE FUNCTION `sam-pitcher-playground.bqd_cicd_test.compare_statuses`() RETURNS BOOL AS ((
+  SELECT 
+  CASE 
+    WHEN COUNT(status) = 0 THEN TRUE 
+    ELSE FALSE 
+  END AS test_passed
+    FROM (
+  SELECT status
+  FROM `sam-pitcher-playground.bqd_cicd_test.order_items`
+  WHERE status NOT IN (
+      "Shipped",
+      "Processing",
+      "Complete",
+      "Cancelled",
+      "Returned"
+  )
+  GROUP BY status
+) AS filtered_statuses
+))
