@@ -1,0 +1,17 @@
+steps:
+  ###########################################################
+  # Build and deploy BigQuery SQL objects
+  ###########################################################
+  - id: 'dataform run'
+    name: dataformco/dataform
+    entrypoint: bash
+    args:
+      - run_dataform.sh
+    env:
+      - PROJECT_ID=${PROJECT_ID}
+      - LOCATION=US
+      - BASE_BRANCH=${_BASE_BRANCH}
+      - SHORT_SHA=${SHORT_SHA}
+      - _PR_NUMBER=${_PR_NUMBER}
+      - DATAFORM_ACTIONS=${_DATAFORM_ACTIONS}
+      - DATAFORM_TAGS=${_DATAFORM_TAGS}
